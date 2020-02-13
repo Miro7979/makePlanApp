@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="nav-wrapper red darken-3">
       <div className="container">
-        <Link to='/' className="brand-logo">Miros Plan Maker</Link>
+        <Link to='/' className="brand-logo left">Miro Plan Maker</Link>
         <SignedInLinks />
         <SignedOutLinks />
       </div>

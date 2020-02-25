@@ -4,13 +4,15 @@ import SignedInLinks from './signedInLinks';
 import SignedOutLinks from './signedOutLinks';
 import { connect } from 'react-redux';
 
-const Navbar = () => {
-  return (
+
+const Navbar = (props) => {
+  const { auth, profile } = props;
+  const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />; 
+    return (
     <nav className="nav-wrapper red darken-3">
       <div className="container">
         <Link to='/' className="brand-logo left">Miro Plan Maker</Link>
-        <SignedInLinks />
-        <SignedOutLinks />
+       { auth.isLoaded && links }
       </div>
     </nav>
   )
@@ -18,7 +20,8 @@ const Navbar = () => {
 
 const mapStateToProps = (state) => {
   return {
-
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   }
 }
 export default connect(mapStateToProps)(Navbar);

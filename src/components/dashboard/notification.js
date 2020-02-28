@@ -5,8 +5,8 @@ const Notifications = (props) => {
   const { notifications } = props;
   return (
     <div className="section">
-      <div className="card z-depth-0">
-        <div className="card-content">
+      <div className="card z-depth-0 notificationCard">
+        <div className="notificationCard card-content blue-grey lighten-4">
           <span className="card-title">Notifications</span>
           <ul className="notifications">
            {notifications && notifications.map(item => {

@@ -11,7 +11,7 @@ const Navbar = (props) => {
     return (
     <nav className="nav-wrapper red darken-3">
       <div className="container">
-        <Link to='/' className="brand-logo left">Miro Plan Maker</Link>
+        <Link  to='/signin' className="brand-logo left">Plan Maker</Link>
        { auth.isLoaded && links }
       </div>
     </nav>
@@ -19,7 +19,6 @@ const Navbar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile
